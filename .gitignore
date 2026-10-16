@@ -2,6 +2,8 @@
 *.sketch
 *.fig
 *.xd
+secrets.js
+.env
 
 # Dependencies
 /node_modules
