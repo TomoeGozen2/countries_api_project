@@ -1,0 +1,15 @@
+li{
+    display: flex;
+    flex-direction: column;
+}
+img {
+    width: 30%;
+}
+/* img:hover{
+    transform: scale(1.1);
+} */
+
+div{
+    
+    flex-direction: column;
+}
