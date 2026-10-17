@@ -23,7 +23,10 @@ fetch ('./data.json')
 .then(data => {
   console.log(data.forEach(post => {
           if(userSearch.value.toLowerCase() == post.name.toLowerCase()){
-            
+            alert(` Your country info is Name: ${post.name}
+            Population: ${post.population}
+            Region: ${post.region}
+            Capital: ${post.capital}`)
           }
   }))
 })
