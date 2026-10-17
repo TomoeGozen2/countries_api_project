@@ -23,8 +23,7 @@ fetch ('./data.json')
 .then(data => {
   console.log(data.forEach(post => {
           if(userSearch.value.toLowerCase() == post.name.toLowerCase()){
-            alert('Your chose country is ' + post.name.toLowerCase() + ' Here are its stats'
-          + `Population: ${post.population} Region: Name: ${post.region} Capital: ${post.capital}`)
+            
           }
   }))
 })
@@ -40,7 +39,7 @@ option.addEventListener("change", (event) => {
 .then(data => {
   console.log(data.forEach(post => {
           if(selectedValue === post.region){
-            console.log("it worked")
+            alert(`The regions you chose are ${post.region}`)
           }
   }))
 })
