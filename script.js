@@ -27,7 +27,7 @@ userSearch.addEventListener("change", (event) => {
   let searchValue = event.target.value.toLowerCase();
 
     let filteredCountries = data.filter(country =>
-        country.name.toLowerCase().includes(searchValue) && region === 'all_regions' || country.region ===region
+        country.name.toLowerCase().includes(searchValue)
     );
       displayCountries(filteredCountries);
 })
