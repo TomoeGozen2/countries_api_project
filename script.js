@@ -1,8 +1,9 @@
 
 let countryList = document.querySelector('ul');
-let button = document.querySelector('button');
+let button = document.getElementById('searchButton');
 let userSearch = document.querySelector('input');
 let option = document.querySelector('option');
+let resetButton = document.getElementById('resetButton')
 
 fetch ('./data.json')
 .then(response => response.json())
@@ -28,9 +29,16 @@ button.addEventListener("click", function(){
             <div>
              Name: ${post.name} 
             Population: ${post.population} Region: Name: ${post.region} Capital: ${post.capital}</div></li></span>`)
+      //This works it just takes a second
+       resetButton.addEventListener("click", function(){
+            
+            displayCountries(data)
+})
             
   }))
+ 
 })
+
 
 //search
 
