@@ -8,10 +8,10 @@ fetch ('./data.json')
 .then(response => response.json())
 .then(data => {
   console.log(data.forEach(post => {
-          countryList.insertAdjacentHTML('beforeend', `<li><img src = "${post.flags.png}"></img> 
+          countryList.insertAdjacentHTML('beforeend', `<span><li><img src = "${post.flags.png}"></img> 
             <div>
              Name: ${post.name} 
-            Population: ${post.population} Region: Name: ${post.region} Capital: ${post.capital}</div></li>`)
+            Population: ${post.population} Region: Name: ${post.region} Capital: ${post.capital}</div></li></span>`)
             
   }))
 })
