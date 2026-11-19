@@ -27,16 +27,17 @@ userSearch.addEventListener("change", (event) => {
   let searchValue = event.target.value.toLowerCase();
 
     let filteredCountries = data.filter(country =>
-        country.name.toLowerCase().includes(searchValue)
+        country.name.toLowerCase().includes(searchValue) && region === 'all_regions' || country.region ===region
     );
       displayCountries(filteredCountries);
 })
+//select based on regions
   regions.addEventListener("change", (event) => {
-        let regionValue = event.target.value;
+      region = event.target.value;
 
-        let filteredCountries = data.filter(country =>
-            country.region.toLowerCase() === regionValue.toLowerCase()
-        );
+      let filteredCountries = data.filter(country =>
+          region === 'all_regions' || country.region.toLowerCase() === region.toLowerCase()
+      );
 
         displayCountries(filteredCountries);
     });
