@@ -33,7 +33,7 @@ userSearch.addEventListener("change", (event) => {
 })
 //select based on regions
   regions.addEventListener("change", (event) => {
-      region = event.target.value;
+      let region = event.target.value;
 
       let filteredCountries = data.filter(country =>
           region === 'all_regions' || country.region.toLowerCase() === region.toLowerCase()
