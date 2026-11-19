@@ -8,6 +8,22 @@ fetch ('./data.json')
 .then(response => response.json())
 .then(data => {
   console.log(data.forEach(post => {
+    function displayCountries(countriesData){
+    countryList.innerHTML = ''
+    countriesData.forEach(post => {
+          countryList.insertAdjacentHTML('beforeend', `<span><li><img src = "${post.flags.png}"></img> 
+            <div>
+             Name: ${post.name} 
+            Population: ${post.population} Region: Name: ${post.region} Capital: ${post.capital}</div></li></span>`)
+            
+  })
+    
+}
+button.addEventListener("click", function(){
+    let searchValue = userSearch.value.toLowerCase()
+    let filteredCountries = data.filter(country => country.name.toLowerCase().includes(searchValue))
+    displayCountries(filteredCountries)
+})
           countryList.insertAdjacentHTML('beforeend', `<span><li><img src = "${post.flags.png}"></img> 
             <div>
              Name: ${post.name} 
@@ -16,35 +32,8 @@ fetch ('./data.json')
   }))
 })
 
+//search
 
-button.addEventListener("click", function(){
-fetch ('./data.json')
-.then(response => response.json())
-.then(data => {
-  console.log(data.forEach(post => {
-          if(userSearch.value.toLowerCase() == post.name.toLowerCase()){
-            alert(` Your country info is Name: ${post.name}
-            Population: ${post.population}
-            Region: ${post.region}
-            Capital: ${post.capital}`)
-          }
-  }))
-})
-})
 
-option.addEventListener("change", (event) => {
-  
-  const selectedValue = event.target.value;
-  
-  
-  fetch ('./data.json')
-.then(response => response.json())
-.then(data => {
-  console.log(data.forEach(post => {
-          if(selectedValue === post.region){
-            alert(`The regions you chose are ${post.region}`)
-          }
-  }))
-})
-});
+
 
