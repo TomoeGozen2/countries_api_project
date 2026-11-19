@@ -4,6 +4,8 @@ let button = document.getElementById('searchButton');
 let userSearch = document.querySelector('input');
 let option = document.querySelector('option');
 let resetButton = document.getElementById('resetButton')
+//regions is the drop down menu
+let regions = document.getElementById('regions')
 
 fetch ('./data.json')
 .then(response => response.json())
@@ -29,6 +31,15 @@ userSearch.addEventListener("change", (event) => {
     );
       displayCountries(filteredCountries);
 })
+  regions.addEventListener("change", (event) => {
+        let regionValue = event.target.value;
+
+        let filteredCountries = data.filter(country =>
+            country.region.toLowerCase() === regionValue.toLowerCase()
+        );
+
+        displayCountries(filteredCountries);
+    });
 //button to search for countries if you prefer
 button.addEventListener("click", function(){
     let searchValue = userSearch.value.toLowerCase()
